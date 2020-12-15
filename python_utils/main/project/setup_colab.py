@@ -26,9 +26,7 @@ def setup_software():
     train_id ="1zaucizp_3iy_Tlk4NNfNqEtP25qcSKLl"
     test_id = "1uqMqdxDmBeQNu-Zziaa02Yoa6IBsMCDk"
     gen.download_file_from_google_drive(train_id, "train_data.zip", size=1.96e6)
-    !rm -rf data/__MACOSX
     gen.download_file_from_google_drive(test_id, "test_data.zip", size=805.2e3)
-    !rm -rf data/__MACOSX
     print("Dataset Downloaded Successfully")
     
     
