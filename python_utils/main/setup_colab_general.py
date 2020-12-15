@@ -41,7 +41,9 @@ def setup_general(dst="utils"):
     """
     Function that enables the general functions in google colab
     """
+    print("hello there!")
     os.makedirs(dst, exist_ok=True)
+    
     with open(f"{dst}/__init__.py", "wb") as f:
         f.close()
 
