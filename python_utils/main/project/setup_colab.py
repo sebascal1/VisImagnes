@@ -10,15 +10,15 @@ def setup_software():
     
     os.system("pip install -q albumentations==0.5.0")
     print("Libraries Installed!")
-    #torch_path = "project/torch_utils.py"
-    #vis_path = "project/visualization_utils.py"
-    #layers_path = "project/layers.py"
-    #train_path = "project/train_utils.py"
-    #setup_general.download_github_content(torch_path, "utils/torch_utils.py")
-    #setup_general.download_github_content(layers_path, "utils/layers.py")
-    #setup_general.download_github_content(train_path, "utils/train_utils.py")
-    #setup_general.download_github_content(vis_path, "utils/visualization_utils.py")
-    #print("Util Functions Downloaded Successfully")
+    torch_path = "project/torch_utils.py"
+    vis_path = "project/visualization_utils.py"
+    layers_path = "project/layers.py"
+    train_path = "project/train_utils.py"
+    setup_general.download_github_content(torch_path, "utils/torch_utils.py")
+    setup_general.download_github_content(layers_path, "utils/layers.py")
+    setup_general.download_github_content(train_path, "utils/train_utils.py")
+    setup_general.download_github_content(vis_path, "utils/visualization_utils.py")
+    print("Util Functions Downloaded Successfully")
     print("Software Demo Enabled Successfully")
    
 def setup_journal():
