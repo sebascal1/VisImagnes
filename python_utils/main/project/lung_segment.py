@@ -145,6 +145,7 @@ def lungSegmentPipeline(img, annot, thresh, i):
   #bitwise closing between lung area
   lungs = fillLungs(lungs)
   lungs = fillLungs(lungs)
+  lungs = ndimage.binary_fill_holes(lungs).astype(int)
   lungs = boolToNum(lungs)
   lungs = ndimage.binary_fill_holes(lungs).astype(int)
   #apply binary mask to get segmented lung image
