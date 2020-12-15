@@ -21,8 +21,6 @@ def setup_software():
     #print("Util Functions Downloaded Successfully")
     print("Software Demo Enabled Successfully")
    
- 
- def setup_journal():
-  
-  setup_general.setup_general()
-  print("Interactive Paper Enabled Succesfully!)
+def setup_journal():
+    setup_general.setup_general()
+    print("Interactive Paper Enabled Succesfully!)
