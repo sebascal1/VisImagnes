@@ -21,11 +21,11 @@ def setup_software():
     setup_general.download_github_content(vis_path, "utils/visualization_utils.py")
     setup_general.download_github_content(vis_path, "utils/lung_segment.py")
     
-    from utils import general as gen
+    #from utils import general as gen
     #if download_dataset:
-    train_id ="1zaucizp_3iy_Tlk4NNfNqEtP25qcSKLl"
+    #train_id ="1zaucizp_3iy_Tlk4NNfNqEtP25qcSKLl"
         #test_id = 
-    gen.download_file_from_google_drive(train_id, "train_data.zip", size=1.96e6)
+    #gen.download_file_from_google_drive(train_id, "train_data.zip", size=1.96e6)
         #gen.download_file_from_google_drive(test_id, "test_data.zip", size=805.2e3)
     print("Dataset Downloaded Successfully")
     
