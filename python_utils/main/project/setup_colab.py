@@ -23,4 +23,4 @@ def setup_software():
    
 def setup_journal():
     setup_general.setup_general()
-    print("Interactive Paper Enabled Succesfully!)
+    print("Interactive Paper Enabled Succesfully!")
