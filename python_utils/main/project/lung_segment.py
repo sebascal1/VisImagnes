@@ -11,6 +11,17 @@ import numpy as np
 import pandas as pd
 import scipy.ndimage as ndimage
 
+def clip(img, minLevel, maxLevel, dtype = "float32"):
+    dim = img.shape[0]
+    imgOut = img
+    for i in range(dim):
+        for j in range(dim):
+            if img[i, j] <= minLevel:
+                imgOut[i,j] = minLevel
+            elif img[i,j] >= maxLevel:
+                imgOut[i,j] = maxLevel
+    return imgOut.astype(dtype)
+
 def blackBackground(img):
   dim = img.shape[0]
   imgOut = img
@@ -138,10 +149,10 @@ def lungSegmentPipeline(img, annot, thresh, i):
   lungs = ndimage.binary_fill_holes(lungs).astype(int)
   #apply binary mask to get segmented lung image
   lungs = lungs * img
-  lungs = lungs / 255
+  lungs = lungs.astype("float32")
   #lungs = lungs.astype("uint8")
   #print lung image
-  labeled_image = get_labeled_image(lungs, annot, 3)
-  plt.figure(figsize=(6, 6))
-  imshow(labeled_image, title=i)
+  #labeled_image = get_labeled_image(lungs, annot, 3)
+  #plt.figure(figsize=(6, 6))
+  #imshow(labeled_image, title=i)
   return lungs
