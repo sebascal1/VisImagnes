@@ -10,8 +10,8 @@ import cv2
 def get_vol_slice(vol, lab, idx):
     vol_slice = vol[..., idx]
     lab_slice = lab[..., idx]
-    vol_slice = np.rot90(vol_slice, 1)
-    lab_slice = np.rot90(lab_slice, 1)
+    #vol_slice = np.rot90(vol_slice, 1)
+    #lab_slice = np.rot90(lab_slice, 1)
 
     vol_slice = gen.scale(vol_slice, 0, 255)
     return vol_slice, lab_slice
