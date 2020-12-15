@@ -41,11 +41,11 @@ def setup_general(dst="utils"):
     """
     Function that enables the general functions in google colab
     """
-    print("hello there!")
+
     os.makedirs(dst, exist_ok=True)
     
     with open(f"{dst}/__init__.py", "wb") as f:
         f.close()
 
-    download_github_content("utils/general.py", f"{dst}/general.py")
+    download_github_content("utils/general.py", f"utils/general.py")
     print("General Functions Enabled Successfully")
