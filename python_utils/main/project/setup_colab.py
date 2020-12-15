@@ -6,7 +6,7 @@ from google.colab import files
 from IPython.display import clear_output
 
 def setup_software():
-    setup_general.setup_general()
+    setup_general.setup_general(download_dataset = True)
     
     os.system("pip install -q albumentations==0.5.0")
     print("Libraries Installed!")
