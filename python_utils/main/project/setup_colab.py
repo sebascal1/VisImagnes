@@ -21,7 +21,7 @@ def setup_software():
     setup_general.download_github_content(vis_path, "utils/visualization_utils.py")
     setup_general.download_github_content(vis_path, "utils/lung_segment.py")
     
-    #from utils import general as gen
+    from utils import general as gen
     #if download_dataset:
     train_id ="1zaucizp_3iy_Tlk4NNfNqEtP25qcSKLl"
     test_id = "1uqMqdxDmBeQNu-Zziaa02Yoa6IBsMCDk"
