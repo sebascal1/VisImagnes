@@ -78,3 +78,33 @@ def rugosity(image):
         return 1 - (1 / (1 + var/max))
     else:
         return 0
+      
+ def confusionMatrix(model, ds):
+  conf_matrix = np.zeros([2,2])
+  for i in range(len(ds)):
+    X, y_true = ds[i]
+    dim = X.shape[2]
+    X_t = X.unsqueeze(0).to(device)
+    X = X.squeeze(0)
+    y_pred = model(X_t)
+
+    true_positives = torch.sum(y_pred[0,1,:,:]* y_true[1,:,:].to(device))
+    false_positives = abs(torch.sum(y_pred[0,1,:,:]) - true_positives)
+    false_negatives = abs(torch.sum(y_true[1,:,:]).to(device) - true_positives)
+
+    true_positives = true_positives.cpu().detach().numpy().round()
+    false_positives = false_positives.cpu().detach().numpy().round()
+    false_negatives = false_negatives.cpu().detach().numpy().round()
+
+    true_negatives = (dim * dim) - true_positives - false_negatives - false_positives
+
+    conf_matrix[0][0] += true_negatives
+    conf_matrix[0][1] += false_positives
+    conf_matrix[1][0] += false_negatives
+    conf_matrix[1][1] += true_positives
+
+    recall = conf_matrix[1][1]/(conf_matrix[1][0]+conf_matrix[1][1])
+    precision = conf_matrix[1][1]/(conf_matrix[0][1]+conf_matrix[1][1])
+    accuracy = (conf_matrix[1][1] + conf_matrix[0][0])/(conf_matrix[1][1] + conf_matrix[0][0] + conf_matrix[1][0] + conf_matrix[0][1])
+
+  return conf_matrix, recall, precision, accuracy
