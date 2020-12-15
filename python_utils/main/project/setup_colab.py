@@ -6,7 +6,7 @@ from google.colab import files
 from IPython.display import clear_output
 
 def setup_software():
-    setup_general.setup_general(download_dataset = True)
+    setup_general.setup_general()
     
     os.system("pip install -q albumentations==0.5.0")
     print("Libraries Installed!")
@@ -22,12 +22,12 @@ def setup_software():
     setup_general.download_github_content(vis_path, "utils/lung_segment.py")
     
     from utils import general as gen
-    if download_dataset:
-        train_id ="1zaucizp_3iy_Tlk4NNfNqEtP25qcSKLl"
+    #if download_dataset:
+    train_id ="1zaucizp_3iy_Tlk4NNfNqEtP25qcSKLl"
         #test_id = 
-        gen.download_file_from_google_drive(train_id, "train_data.zip", size=1.96e6)
+    gen.download_file_from_google_drive(train_id, "train_data.zip", size=1.96e6)
         #gen.download_file_from_google_drive(test_id, "test_data.zip", size=805.2e3)
-        print("Dataset Downloaded Successfully")
+    print("Dataset Downloaded Successfully")
     
     
     print("Util Functions Downloaded Successfully")
