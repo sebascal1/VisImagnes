@@ -67,7 +67,7 @@ def predict(model, device, dataset, class_: str="kidney",
 
         plt.subplot(3, 4, 3 + i*4)
         gen.imshow(get_labeled_image(X, y_pred, **kwargs), title="Boundary")
-
+        
         plt.subplot(3, 4, 4 + i*4)
         gen.imshow(y_true, color=False, title="True Label")
 
