@@ -43,6 +43,23 @@ def jaccard(y_pred, y_true, dim=(2, 3), eps=1e-5):
     loss = 1 - IoU
     return loss, IoU
 
+def dice(y_pred, y_true, dim=(2, 3), eps=1e-5):
+    """
+    Intersection over Union metric
+    :param y_pred: The predictions of the model
+    :param y_true: The true labels of the data
+    :param dim: The axis where we calculate the operations
+    :param eps: The tolerance
+    :return: The loss calculated and the IoU metric
+    """
+    intersection = torch.sum(y_true * y_pred, dim = dim)
+    diceLabel = torch.sum(y_true, dim = dim)
+    dicePredict = torch.sum(y_pred, dim = dim)
+
+    dice = ((2 * intersection + eps) / (diceLabel + dicePredict + eps)).mean()
+    loss = 1 - dice
+    return loss, dice
+
 def loss_func(y_pred, y_true, metric):
     """
     The loss function calculator
