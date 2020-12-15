@@ -119,41 +119,41 @@ def fillLungs(img):
   img = binary_closing(img, morphology.disk(6))
   return img
   
-def lungSegmentPipeline(img, annot, thresh, i):
+def lungSegmentPipeline(img, thresh):
 
   #Image binarization
-  #imgBinary = img < thresh
   imgBinaryHigh = img >= thresh
   imgBinaryLow = img <= thresh
   imgBinaryFill = ndimage.binary_fill_holes(imgBinaryHigh).astype(int)
   imgBinary = imgBinaryFill * imgBinaryLow
 
-  #set background to black for easier image extraction
-  #imgBinary = blackBackground(imgBinary)
   #remove noise using closing and opening binary operations
   imgBinary = binary_opening(imgBinary)
   imgBinary = binary_closing(imgBinary)
+    
   #get connected components
   labels = measure.label(imgBinary, background=0)
+    
   #extract labels relating to lungs
   lab1, lab2 = findLabelsAlt(labels)
+    
   #extract lungs from image and perform morphological closing
   lungs = getLungs(labels, lab1, lab2)
   lungs = binary_closing(lungs, morphology.disk(6))
+
   #turn output boolean image to true/false
   lungs = boolToNum(lungs)
+
   #bitwise closing between lung area
   lungs = fillLungs(lungs)
   lungs = fillLungs(lungs)
   lungs = ndimage.binary_fill_holes(lungs).astype(int)
   lungs = boolToNum(lungs)
   lungs = ndimage.binary_fill_holes(lungs).astype(int)
+
   #apply binary mask to get segmented lung image
   lungs = lungs * img
   lungs = lungs.astype("float32")
   #lungs = lungs.astype("uint8")
-  #print lung image
-  #labeled_image = get_labeled_image(lungs, annot, 3)
-  #plt.figure(figsize=(6, 6))
-  #imshow(labeled_image, title=i)
+
   return lungs
