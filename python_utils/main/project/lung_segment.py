@@ -11,7 +11,7 @@ import numpy as np
 import pandas as pd
 import scipy.ndimage as ndimage
 
-def clip(img, minLevel, maxLevel, dtype = "float32"):
+def interThresh(img, minLevel, maxLevel, dtype = "float32"):
     dim = img.shape[0]
     imgOut = img
     for i in range(dim):
