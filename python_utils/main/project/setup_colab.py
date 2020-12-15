@@ -1,4 +1,4 @@
-#Original Autho jpcano1, modified for personal use from the original 'setup_colab.py'
+#Original Author jpcano1, modified for personal use from the original 'setup_colab.py'#
 
 import setup_colab_general as setup_general
 import os
@@ -10,10 +10,10 @@ def setup_software():
     
     os.system("pip install -q albumentations==0.5.0")
     print("Libraries Installed!")
-    #torch_path = "ISIS_4825/ML/Taller_13/torch_utils.py"
-    #vis_path = "ISIS_4825/ML/Taller_13/visualization_utils.py"
-    #layers_path = "ISIS_4825/ML/Taller_13/layers.py"
-    #train_path = "ISIS_4825/ML/Taller_13/train_utils.py"
+    #torch_path = "project/torch_utils.py"
+    #vis_path = "project/visualization_utils.py"
+    #layers_path = "project/layers.py"
+    #train_path = "project/train_utils.py"
     #setup_general.download_github_content(torch_path, "utils/torch_utils.py")
     #setup_general.download_github_content(layers_path, "utils/layers.py")
     #setup_general.download_github_content(train_path, "utils/train_utils.py")
