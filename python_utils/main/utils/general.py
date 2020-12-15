@@ -199,7 +199,13 @@ def download_file_from_google_drive(id_, filename, dst="./data", size=None,
 """
 Data Scalers
 """
-def scale(img, min_, max_, dtype="uint8"):
+def scaleInt(img, min_, max_, dtype="uint8"):
+    img_min = img.min()
+    img_max = img.max()
+    m = (max_ - min_) / (img_max - img_min)
+    return (m * (img - img_min) + min_).astype(dtype)
+
+def scale(img, min_, max_, dtype="float32"):
     img_min = img.min()
     img_max = img.max()
     m = (max_ - min_) / (img_max - img_min)
