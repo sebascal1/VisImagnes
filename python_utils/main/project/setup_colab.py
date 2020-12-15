@@ -15,7 +15,7 @@ def setup_software():
     layers_path = "project/layers.py"
     train_path = "project/train_utils.py"
     lung_path = "project/lung_segment.py"
-    setup_general.download_github_content(torch_path, "utils/torch_utils.py")
+    setup_general.download_github_content("project/torch_utils.py", "utils/torch_utils.py")
     setup_general.download_github_content(layers_path, "utils/layers.py")
     setup_general.download_github_content(train_path, "utils/train_utils.py")
     setup_general.download_github_content(vis_path, "utils/visualization_utils.py")
