@@ -5,8 +5,7 @@ import os
 from google.colab import files
 from IPython.display import clear_output
 
-def setup_software(download_dataset=True, pretrained=True, 
-                      brats=False):
+def setup_software():
     setup_general.setup_general()
     
     os.system("pip install -q albumentations==0.5.0")
