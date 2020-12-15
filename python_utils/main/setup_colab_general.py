@@ -14,7 +14,7 @@ def download_github_content(path, filename, chnksz=1000):
     :param filename: the filename
     :param chnksz: the chunk size
     """
-    url = f"https://raw.githubusercontent.com/sebascal1/VisImagnes/python_utils/main/{path}"
+    url = f"https://raw.githubusercontent.com/sebascal1/VisImagnes/master/python_utils/main/{path}"
     
     try:
         r = requests.get(url, stream=True)
@@ -45,5 +45,5 @@ def setup_general(dst="utils"):
     with open(f"{dst}/__init__.py", "wb") as f:
         f.close()
 
-    download_github_content("general.py", f"{dst}/general.py")
+    download_github_content("utils/general.py", f"{dst}/general.py")
     print("General Functions Enabled Successfully")
