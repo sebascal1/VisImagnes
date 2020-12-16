@@ -48,12 +48,12 @@ def setup_journal():
     
     from utils import general as gen
     #if download_dataset:
-    train_set_thresh ="1yN2dzVPjz-5yTMZfeTrMRTDQVCgkmwaU"
-    train_set_segment = "1Ar7ww1ZNjsYs9SpQWmXdVDeDbbdIzV6H"
-    test_set_original = "QLuziDEys8G9tp5d-6-X9hnlusy5MwgK"
-    gen.download_file_from_google_drive(train_set_thresh, "selectDataSegment.zip", size=216e3)
-    gen.download_file_from_google_drive(train_set_segment, "selectDataClip.zip", size=55.7e3)
-    gen.download_file_from_google_drive(test_set_original, "selectData.zip", size=549.7e3)
+    set_thresh ="1yN2dzVPjz-5yTMZfeTrMRTDQVCgkmwaU"
+    set_segment = "1Ar7ww1ZNjsYs9SpQWmXdVDeDbbdIzV6H"
+    set_original = "1QLuziDEys8G9tp5d-6-X9hnlusy5MwgK"
+    gen.download_file_from_google_drive(set_thresh, "selectDataClip.zip", size=216e3)
+    gen.download_file_from_google_drive(set_segment, "selectDataSegment.zip", size=55.7e3)
+    gen.download_file_from_google_drive(set_original, "selectData.zip", size=549.7e3)
     
     originalData_id = "1CXyrOF1KEeZUWtKNM3GWaI3Evqwg48-n"
     threhsoldData_id = "1l4BlO2APgdMNyuIyQ0dm3sDIB9zgASzR"
