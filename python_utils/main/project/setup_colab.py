@@ -35,7 +35,7 @@ def setup_software():
    
 def setup_journal():
     setup_general.setup_general()
-    orch_path = "project/torch_utils.py"
+    torch_path = "project/torch_utils.py"
     vis_path = "project/visualization_utils.py"
     layers_path = "project/layers.py"
     train_path = "project/train_utils.py"
