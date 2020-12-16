@@ -78,8 +78,9 @@ def rugosity(image):
         return 1 - (1 / (1 + var/max))
     else:
         return 0
-      
-def confusionMatrix(model, ds):
+
+#By Sebascal1      
+def confusionMatrix(ds, model, device):
   conf_matrix = np.zeros([2,2])
   for i in range(len(ds)):
     X, y_true = ds[i]
