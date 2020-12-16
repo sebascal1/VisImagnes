@@ -35,4 +35,23 @@ def setup_software():
    
 def setup_journal():
     setup_general.setup_general()
+    orch_path = "project/torch_utils.py"
+    vis_path = "project/visualization_utils.py"
+    layers_path = "project/layers.py"
+    train_path = "project/train_utils.py"
+    lung_path = "project/lung_segment.py"
+    setup_general.download_github_content(torch_path, "utils/torch_utils.py")
+    setup_general.download_github_content(layers_path, "utils/layers.py")
+    setup_general.download_github_content(train_path, "utils/train_utils.py")
+    setup_general.download_github_content(vis_path, "utils/visualization_utils.py")
+    setup_general.download_github_content(lung_path, "utils/lung_segment.py")
+    
+    from utils import general as gen
+    #if download_dataset:
+    train_set_1 ="1yN2dzVPjz-5yTMZfeTrMRTDQVCgkmwaU"
+    train_set_2 = "1Ar7ww1ZNjsYs9SpQWmXdVDeDbbdIzV6H"
+    gen.download_file_from_google_drive(train_id, "train_data_1.zip", size=216e3)
+    gen.download_file_from_google_drive(test_id, "train_data_2.zip", size=55.7e3)
+    print("Dataset Downloaded Successfully")
+    
     print("Interactive Paper Enabled Succesfully!")
