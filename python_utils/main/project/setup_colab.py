@@ -50,10 +50,10 @@ def setup_journal():
     #if download_dataset:
     train_set_thresh ="1yN2dzVPjz-5yTMZfeTrMRTDQVCgkmwaU"
     train_set_segment = "1Ar7ww1ZNjsYs9SpQWmXdVDeDbbdIzV6H"
-    test_set_original = "QLuziDEys8G9tp5d-6-X9hnlusy5MwgK/view?usp=sharing"
-    gen.download_file_from_google_drive(train_set_thresh, "data_tresh.zip", size=216e3)
-    gen.download_file_from_google_drive(train_set_segment, "data_segment.zip", size=55.7e3)
-    gen.download_file_from_google_drive(test_set_original, "data_original.zip", size=549.7e3)
+    test_set_original = "QLuziDEys8G9tp5d-6-X9hnlusy5MwgK"
+    gen.download_file_from_google_drive(train_set_thresh, "selectDataSegment.zip", size=216e3)
+    gen.download_file_from_google_drive(train_set_segment, "selectDataClip.zip", size=55.7e3)
+    gen.download_file_from_google_drive(test_set_original, "selectData.zip", size=549.7e3)
     
     originalData_id = "1CXyrOF1KEeZUWtKNM3GWaI3Evqwg48-n"
     threhsoldData_id = "1l4BlO2APgdMNyuIyQ0dm3sDIB9zgASzR"
