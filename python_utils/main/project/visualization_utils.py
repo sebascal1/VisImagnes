@@ -79,7 +79,7 @@ def rugosity(image):
     else:
         return 0
       
- def confusionMatrix(model, ds):
+def confusionMatrix(model, ds):
   conf_matrix = np.zeros([2,2])
   for i in range(len(ds)):
     X, y_true = ds[i]
