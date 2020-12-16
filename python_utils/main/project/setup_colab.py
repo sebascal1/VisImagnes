@@ -52,6 +52,16 @@ def setup_journal():
     train_set_2 = "1Ar7ww1ZNjsYs9SpQWmXdVDeDbbdIzV6H"
     gen.download_file_from_google_drive(train_set_1, "train_data_1.zip", size=216e3)
     gen.download_file_from_google_drive(train_set_2, "train_data_2.zip", size=55.7e3)
+    
+    originalData_id = "1CXyrOF1KEeZUWtKNM3GWaI3Evqwg48-n"
+    threhsoldData_id = "1l4BlO2APgdMNyuIyQ0dm3sDIB9zgASzR"
+    segmentedData_id = "1-YoJegTc22hoRzbtpVpdtkRKzyGjwSvV"
+    gen.download_file_from_google_drive(originalData_id, "weights_original.pt",
+                                            dst="./models", size=120e3)
+    gen.download_file_from_google_drive(threhsoldData_id, "weights_interval.pt",
+                                            dst="./models", size=120e3)
+    gen.download_file_from_google_drive(segmentedData_id, "weights_segmented.pt",
+                                            dst="./models", size=120e3)
     print("Dataset Downloaded Successfully")
     
     print("Interactive Paper Enabled Succesfully!")
