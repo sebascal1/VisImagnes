@@ -104,8 +104,8 @@ def confusionMatrix(ds, model, device):
     conf_matrix[1][0] += false_negatives
     conf_matrix[1][1] += true_positives
 
-   recall = conf_matrix[1][1]/(conf_matrix[1][0]+conf_matrix[1][1])
-   precision = conf_matrix[1][1]/(conf_matrix[0][1]+conf_matrix[1][1])
-   accuracy = (conf_matrix[1][1] + conf_matrix[0][0])/(conf_matrix[1][1] + conf_matrix[0][0] + conf_matrix[1][0] + conf_matrix[0][1])
+  recall = conf_matrix[1][1]/(conf_matrix[1][0]+conf_matrix[1][1])
+  precision = conf_matrix[1][1]/(conf_matrix[0][1]+conf_matrix[1][1])
+  accuracy = (conf_matrix[1][1] + conf_matrix[0][0])/(conf_matrix[1][1] + conf_matrix[0][0] + conf_matrix[1][0] + conf_matrix[0][1])
 
   return conf_matrix, recall, precision, accuracy
