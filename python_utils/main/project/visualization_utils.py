@@ -149,7 +149,7 @@ def imageCloseup(rnd_idx,test_ds, model, device):
                 title=f"Index: {rnd_idx} True Label")
 
   plt.subplot(5, 5, 3)
-  labeled_X = vis.get_labeled_image(X, y_true[1], (0, 1, 0), (0, 1, 0), "thick")
+  labeled_X = get_labeled_image(X, y_true[1], (0, 1, 0), (0, 1, 0), "thick")
   gen.imshow(labeled_X, color=False, 
                 title=f"Index: {rnd_idx} True")
 
@@ -158,6 +158,6 @@ def imageCloseup(rnd_idx,test_ds, model, device):
                 title=f"Index: {rnd_idx} Prediction")
 
   plt.subplot(5, 5, 5)
-  labeled_X_lab = vis.get_labeled_image(X, y_pred, (0, 1, 0), (0, 1, 0), "subpixel")
+  labeled_X_lab = get_labeled_image(X, y_pred, (0, 1, 0), (0, 1, 0), "subpixel")
   gen.imshow(labeled_X_lab, color=False, 
                 title=f"Index: {rnd_idx} Prediction")
