@@ -128,3 +128,36 @@ def positive_counts(ds):
   count = pd.DataFrame(count)
   count.rename(columns = {0: "Cantidad"}, inplace=True)
   return count
+
+def imageCloseup(rnd_idx,test_ds, model, device):
+  plt.figure(figsize=(20, 20))
+
+  X, y_true = test_ds[rnd_idx]
+  X_t = X.unsqueeze(0).to(device)
+  X = X.squeeze(0)
+
+  y_pred = model(X_t)
+  y_pred = y_pred.squeeze(0)
+  y_pred = y_pred[1].cpu().detach().numpy() > .5
+
+  plt.subplot(5, 5, 1)
+  gen.imshow(X, color=False, 
+                title=f"Index: {rnd_idx}")
+
+  plt.subplot(5, 5, 2)
+  gen.imshow(y_true[1], color=False, 
+                title=f"Index: {rnd_idx} True Label")
+
+  plt.subplot(5, 5, 3)
+  labeled_X = vis.get_labeled_image(X, y_true[1], (0, 1, 0), (0, 1, 0), "thick")
+  gen.imshow(labeled_X, color=False, 
+                title=f"Index: {rnd_idx} True")
+
+  plt.subplot(5, 5, 4)
+  gen.imshow(y_pred, color=False, 
+                title=f"Index: {rnd_idx} Prediction")
+
+  plt.subplot(5, 5, 5)
+  labeled_X_lab = vis.get_labeled_image(X, y_pred, (0, 1, 0), (0, 1, 0), "subpixel")
+  gen.imshow(labeled_X_lab, color=False, 
+                title=f"Index: {rnd_idx} Prediction")
