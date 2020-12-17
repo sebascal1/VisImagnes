@@ -29,6 +29,10 @@ def setup_software():
     gen.download_file_from_google_drive(test_id, "test_data.zip", size=805.2e3)
     print("Dataset Downloaded Successfully")
     
+    software_model_id = "1ypjPbKDGfVtnJdgJnxhkpZecS7dyl2fr"
+    print("gonna get me some models!")
+    gen.download_file_from_google_drive(software_model_id, "weights_software.pt",
+                                            dst="./models", size=120e3)
     
     print("Util Functions Downloaded Successfully")
     print("Software Demo Enabled Successfully")
@@ -59,7 +63,7 @@ def setup_journal():
     threhsoldData_id = "1l4BlO2APgdMNyuIyQ0dm3sDIB9zgASzR"
     threhsoldData_id2 = "1tBeYO0GjtcIYXhGpJU-VmQjE5G-9ApuH"
     segmentedData_id = "1-YoJegTc22hoRzbtpVpdtkRKzyGjwSvV"
-    print("gonna get me some models!")
+
     gen.download_file_from_google_drive(originalData_id, "weights_original.pt",
                                             dst="./models", size=120e3)
     gen.download_file_from_google_drive(threhsoldData_id, "weights_interval.pt",
