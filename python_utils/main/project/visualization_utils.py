@@ -115,3 +115,15 @@ def confusionMatrix(ds, model, device):
   precision = conf_matrix[1][1]/(conf_matrix[0][1]+conf_matrix[1][1])
   accuracy = (conf_matrix[1][1] + conf_matrix[0][0])/(conf_matrix[1][1] + conf_matrix[0][0] + conf_matrix[1][0] + conf_matrix[0][1])
   return conf_matrix, recall, precision, accuracy
+
+def positive_counts(ds):
+  count = np.zeros([2,1])
+  for i in range(len(ds)):
+    X,y = ds[i]
+    if (y.max()) >= 0.5:
+      count[1][0] += 1
+    else:
+      count[0][0] += 1
+  count = pd.DataFrame(count)
+  count.rename(columns = {0: "Cantidad"}, inplace=True)
+  return count
