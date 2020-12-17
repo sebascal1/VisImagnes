@@ -29,7 +29,7 @@ def get_labeled_image(img, label, outline_color=(1, 0, 0),
                                color=color, mode=mode)
     return img_mask
 
-def predict(model, device, dataset, class_: str="kidney",
+def predict(model, device, dataset, class_: str="PE",
             random_state=1234, **kwargs):
     """
     Method to make predictions from a model
@@ -39,9 +39,9 @@ def predict(model, device, dataset, class_: str="kidney",
     :param class_: The class of the predictions
     :param random_state: The random seed
     """
-    if class_ == "kidney":
+    if class_ == "lung":
         channel = 0
-    elif class_ == "tumor":
+    elif class_ == "PE":
         channel = 1
     else:
         raise Exception("No es la clase esperada")
