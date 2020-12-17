@@ -57,11 +57,14 @@ def setup_journal():
     
     originalData_id = "1CXyrOF1KEeZUWtKNM3GWaI3Evqwg48-n"
     threhsoldData_id = "1l4BlO2APgdMNyuIyQ0dm3sDIB9zgASzR"
+    threhsoldData_id2 = "1tBeYO0GjtcIYXhGpJU-VmQjE5G-9ApuH"
     segmentedData_id = "1-YoJegTc22hoRzbtpVpdtkRKzyGjwSvV"
     print("gonna get me some models!")
     gen.download_file_from_google_drive(originalData_id, "weights_original.pt",
                                             dst="./models", size=120e3)
     gen.download_file_from_google_drive(threhsoldData_id, "weights_interval.pt",
+                                            dst="./models", size=120e3)
+    gen.download_file_from_google_drive(threhsoldData_id2, "weights_interval2.pt",
                                             dst="./models", size=120e3)
     gen.download_file_from_google_drive(segmentedData_id, "weights_segmented.pt",
                                             dst="./models", size=120e3)
